@@ -19,14 +19,14 @@ export class Screen extends Component<IScreen, any> {
         console.log("will unmount")
     }
 
-    componentDidUpdate(prevProps: Readonly<IScreen>) {
+    componentDidUpdate() {
         console.log("Updated")
     }
 
     render() {
 
 
-            return (<pre>{this.props.text}</pre>)
+            return (<div className="fakeScreen"><p>{this.props.text}</p></div> )
 
 
     }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Screen } from "./components/screen";
-import reactLogo from './assets/react.svg'
 import './App.css'
 import {terminaltext} from "./consts";
 
@@ -20,7 +19,7 @@ class App extends React.Component<any, AppState> {
         this.timerId = -1
         this.state = {
             text: "",
-            inputText: terminaltext.split("\n"),
+            inputText: terminaltext.split("\n").reverse(),
             count: 0
         }
     }
@@ -36,7 +35,7 @@ class App extends React.Component<any, AppState> {
         }
     }
     componentDidMount() {
-        this.timerId = setInterval(() => this.updateText(), 100)
+        this.timerId = setInterval(() => this.updateText(), 130)
     }
 
     componentWillUnmount() {
@@ -48,29 +47,10 @@ class App extends React.Component<any, AppState> {
 
     render() {
         return (
-            <div className="App">
-                <div>
-                    <a href="https://vitejs.dev" target="_blank">
-                        <img src="/vite.svg" className="logo" alt="Vite logo" />
-                    </a>
-                    <a href="https://reactjs.org" target="_blank">
-                        <img src={reactLogo} className="logo react" alt="React logo" />
-                    </a>
-                </div>
+            <div>
+
                 <Screen text={this.state.text} />
-                <h1>Vite + React</h1>
-                <p>farts</p>
-                <div className="card">
-                    <button onClick={() => this.setState({count: this.state.count + 1})}>
-                        count is {this.state.count}
-                    </button>
-                    <p>
-                        Edit <code>src/App.tsx</code> and save to test HMR
-                    </p>
-                </div>
-                <p className="read-the-docs">
-                    Click on the Vite and React logos to learn more
-                </p>
+
             </div>
         )
     }
