@@ -26,7 +26,7 @@ export class Screen extends Component<IScreen, any> {
     render() {
 
 
-            return (<div className="fakeScreen"><p>{this.props.text}</p></div> )
+            return (<div className="fakeScreen textGreen crt"><p>{this.props.text}</p></div> )
 
 
     }
