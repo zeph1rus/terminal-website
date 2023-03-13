@@ -44,14 +44,10 @@ class App extends React.Component<any, AppState> {
 
     getTimerLength(): number {
         const possibles = [130, 200, 50, 10, 300]
-        let out = sample(possibles, {
+        let out: any = sample(possibles, {
             'probs': [0.6, 0.2, 0.1, 0.05, 0.05],
-        }) as unknown
-        if (typeof(out) == 'number') {
-            return out;
-        } else {
-            return 130
-        }
+        })
+        return out[0] as number
     }
 
     updateText() {
@@ -68,7 +64,7 @@ class App extends React.Component<any, AppState> {
         }
     }
     componentDidMount() {
-        this.timeoutId = setTimeout(() => this.updateText(), 130)
+        this.timeoutId = setTimeout(() => this.updateText(), this.getTimerLength())
     }
 
     componentWillUnmount() {
