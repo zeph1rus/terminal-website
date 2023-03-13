@@ -24,7 +24,7 @@ export class AboutBox extends Component<any, any> {
                 <br />
                 You can find me at <a href="https://www.linkedin.com/in/jontruran/">LinkedIn</a><br /><br />
 
-                You can also email me at <a href="mailto:jon@9600bps.net">jon@960bbps.net</a><br /><br />
+                You can also email me at <a href="mailto:jon@9600bps.net">jon@9600bbps.net</a><br /><br />
 
                 You can find my github <a href="https://github.com/zeph1rus/">here</a> <br />
                     Though most of my code is private for contractual reasons.
