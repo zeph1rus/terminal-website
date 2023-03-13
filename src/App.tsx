@@ -3,11 +3,13 @@ import { Screen } from "./components/screen";
 import './App.css'
 import {terminaltext} from "./consts";
 import  sample  from "@stdlib/random-sample"
+import {AboutBox} from "./components/about";
 
 type AppState = {
     text: string
     inputText: string[]
     count: number
+    aboutDisplayed: boolean
 }
 
 
@@ -19,9 +21,26 @@ class App extends React.Component<any, AppState> {
         this.state = {
             text: "",
             inputText: terminaltext.split("\n").reverse(),
-            count: 0
+            count: 0,
+            aboutDisplayed: false
+        }
+        this.screenClick = this.screenClick.bind(this)
+        this.updateText = this.updateText.bind(this)
+    }
+
+    screenClick() {
+        console.log("screenclick method")
+        if (this.state.aboutDisplayed) {
+            this.setState({
+                aboutDisplayed: false
+            })
+        } else {
+            this.setState({
+                aboutDisplayed: true
+            })
         }
     }
+
 
     getTimerLength(): number {
         const possibles = [130, 200, 50, 10, 300]
@@ -59,11 +78,10 @@ class App extends React.Component<any, AppState> {
     }
 
     render() {
-        return (
-            <div>
-
-                <Screen text={this.state.text} />
-
+        return         (
+            <div onKeyDown={() => this.screenClick()}>
+                <Screen text={this.state.text} screenClick={this.screenClick} display={!this.state.aboutDisplayed} />
+                <AboutBox display={this.state.aboutDisplayed} screenClick={this.screenClick}></AboutBox>
             </div>
         )
     }

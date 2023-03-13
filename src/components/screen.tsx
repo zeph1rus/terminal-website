@@ -2,35 +2,24 @@ import React, {Component} from  'react'
 import './screen.css'
 export interface IScreen {
     text: string
+    screenClick: Function
+    display: boolean
 }
 
 
 export class Screen extends Component<IScreen, any> {
 
 
-    componentDidMount() {
-        console.log("didmount")
-    }
-
-
-
-
-    componentWillUnmount() {
-        console.log("will unmount")
-    }
-
-    componentDidUpdate() {
-        console.log("Updated")
-    }
-
     render() {
 
-
-            return (<div className="fakeScreen textGreen crt"><p>{this.props.text}</p></div> )
-
+        if (this.props.display) {
+            return (<div className="fakeScreen textGreen crt" onClick={() => this.props.screenClick()}>
+                <p>{this.props.text}</p></div>)
+        } else {
+            return null
+        }
 
     }
-
 }
 
 /*
