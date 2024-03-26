@@ -13,7 +13,7 @@ export class Screen extends Component<IScreen, any> {
     render() {
 
         if (this.props.display) {
-            return (<div className="fakeScreen textGreen crt" onClick={() => this.props.screenClick()}>
+            return (<div className="fakeScreen textGreen crt" onClick={() => this.props.screenClick()} onKeyDown={() => this.props.screenClick()}>
                 <p>{this.props.text}</p></div>)
         } else {
             return null
