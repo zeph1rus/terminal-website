@@ -50,6 +50,6 @@ X.25 software, Version 3.0.0.
 16384K bytes of Flash internal SIMM (Sector size 512K)
 
 
-Click MOUSE to get started!
+Press RETURN or Click MOUSE to get started!
 _
 `

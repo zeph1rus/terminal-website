@@ -75,7 +75,7 @@ class App extends React.Component<any, AppState> {
 
     render() {
         return         (
-            <div onKeyDown={() => this.screenClick()}>
+            <div onKeyDown={() => this.screenClick()} tabIndex={0}>
                 <Screen text={this.state.text} screenClick={this.screenClick} display={!this.state.aboutDisplayed} />
                 <AboutBox display={this.state.aboutDisplayed} screenClick={this.screenClick}></AboutBox>
             </div>
